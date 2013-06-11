@@ -1,0 +1,45 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag    "facebook", :media => "all" %>
+  <%= javascript_include_tag :facebook %>
+
+  <meta property="og:title" content="facebook example" />
+  <meta property="og:url" content="<%= facebook_url %>"; />
+<% end %>
+
+<!-- USADO POR FACEBOOK -->
+<div id='fb-root' />
+<script src='http://connect.facebook.net/es_ES/all.js#xfbml=1'/></script>
+
+<!-- REMOVER EL ANCLA QUE FACEBOOK AGREGA -->
+<script type="text/javascript">
+  $(document).ready(function(e){
+    if (window.location.hash == '#_=_') {
+      window.location.hash = '';
+      history.pushState('', document.title, window.location.pathname);
+      e.preventDefault();
+    }
+  })
+</script>
+
+
+<div id="container">
+  <ul class="tabs">
+    <li><a href="#profile">Profile</a></li>
+  </ul>
+
+  <div class="tab_container">
+    <div id="profile" class="tab_content">
+
+      <!-- PROFILE DEL USUARIO -->
+      <% user = JSON.parse(@profile)[0] %>
+      <div class="subtitle">Profile</div>
+      <div class="label">Nombres:</div>
+      <div class="label-info"><%= user['first_name'] %> <%= user['middle_name'] %></div>
+      <div class="label">Apellidos:</div>
+      <div class="label-info"><%= user['last_name'] %></div>
+      <div style="clear: both"></div>
+      
+    </div>
+
+  </div>
+</div>

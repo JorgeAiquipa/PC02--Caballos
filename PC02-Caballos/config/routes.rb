@@ -1,4 +1,12 @@
 PC02Caballos::Application.routes.draw do
+
+  get '/auth/facebook/callback' => 'facebook#create'
+  get 'auth/failure' => 'facebook#failure'
+  get 'facebook'  => 'facebook#index', as: :facebook
+  
+  resources :main
+  resources :facebook
+  root to: 'main#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
