@@ -7,6 +7,8 @@ PC02Caballos::Application.routes.draw do
   resources :main
   resources :facebook
   root to: 'main#index'
+  resources :horses
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
