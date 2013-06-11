@@ -36,7 +36,7 @@
   <% num = 6 %>
   <% @reg = Horse.last %>
   <% begin %>
-    <% @r = Horse.find(rand(@reg.id)) %>  
+    <% @r = Horse.find(rand(1..@reg.id)) %>  
       <tr>     
         <td><%= @r.id %></td>
         <td><%= @r.name %></td>
