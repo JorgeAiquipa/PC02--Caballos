@@ -1,0 +1,87 @@
+<h1>Realizar Apuestas</h1>
+
+<%= form_for(@bet) do |f| %>
+  <% if @bet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
+
+      <ul>
+      <% @bet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_tag  calculatewins_path, method: :calculatewins do %>
+  <p id="notice"><%= notice %></p>  
+    <div class="field">
+       <%= label_tag :Carrera %> <br />
+       <%= text_field_tag :horserace %>
+    </div>
+    <div class="field">
+       <%= label_tag :Tipo %> <br>
+       <%= radio_button_tag :bettype, 0 %>Winer
+       <%= radio_button_tag :bettype, 1 %>Place
+    <br>
+    </div>
+
+  <table >
+    <tr>
+      <th>.:: Id ::.</th>
+      <th>.:: Caballo ::.</th>
+      <th>.:: Ratio ::.</th>
+    </tr>
+  <% i = 0 %>
+  <% num = 6 %>
+  <% reg = Horse.last %>
+  <% begin %>
+    <% r = Horse.find(rand(reg.id)) %>  
+      <tr>     
+        <td><%= r.id %></td>
+        <td><%= r.name %></td>
+        <td><%= r.ratio %></td>    
+      </tr>
+    <% i += 1 %>
+  <% end while i < num %>
+  </table>
+
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+#  <div class="field">
+#       <%= label_tag :Caballo1 %> <br />
+#       <%= text_field_tag :horse1 %>
+#   </div>
+#   <div class="field">
+#       <%= label_tag :Caballo2 %> <br />
+#       <%= text_field_tag :horse2 %>
+#   </div>
+#   <div class="field">
+#       <%= label_tag :Caballo1 %> <br />
+#       <%= text_field_tag :horse3 %>
+#   </div>
+#   <div class="field">
+#       <%= label_tag :Caballo1 %> <br />
+#       <%= text_field_tag :horse4 %>
+#   </div>
+#   <div class="field">
+#       <%= label_tag :Caballo1 %> <br />
+#       <%= text_field_tag :horse5 %>
+#       <div class="field">
+#       <%= label_tag :Caballo1 %> <br />
+#       <%= text_field_tag :horse6 %>
+#   </div>
+#   </div>
+#   <div class="field">
+#       <%= label_tag :Monto %> <br />
+#       <%= text_field_tag :betamount %>
+#   </div>
+#   <div class="actions">
+#     <%= submit_tag "Crear" %>
+#   </div>
