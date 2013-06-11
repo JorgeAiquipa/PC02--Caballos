@@ -1,14 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PC02Caballos</title>
+  <title>Horse Riding</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="js/jquery.core.js"></script>
+	<script type="text/javascript" src="js/jquery.superfish.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.js"></script>
+	<script type="text/javascript" src="js/jquery.scripts.js"></script>
 </head>
 <body>
+	<div id="wrap">
+    <div class="top_corner"></div>
+    <div id="main_container">
+    
+        <div id="header">
+            <div id="logo"><a href="index.html"><img src="/assets/logo.jpg" alt="" title="" border="0" /></a></div>
+            
+            <a href="make-a-donation.html" class="make_donation"></a>
+            
+            <div id="menu">
+                <ul>                                                                                            
+                    <li><a class="current" href="index.html" title="">Caballos</a></li>
+                    <li><a href="about.html" title="">Carreras</a></li>
+                    <li><a href="#" title="">Apuestas</a></li>
+                </ul>
+            </div>
+            
+        
+        </div>
+        
+        
+        <div class="middle_banner">               
+           
+<div class="featured_slider">
+      	<!-- begin: sliding featured banner -->
+         <div id="featured_border" class="jcarousel-container">
+            <div id="featured_wrapper" class="jcarousel-clip">
+               <ul id="featured_images" class="jcarousel-list">
+                  <li><img src="/assets/img1.jpg" width="965" height="280" alt="" /></li>
+                  <li><img src="/assets/img2.jpg" width="965" height="280" alt="" /></li>
+                  <li><img src="/assets/img3.jpg" width="965" height="280" alt="" /></li>
+               </ul>
+            </div>
+            <!--<div id="featured_positioner_desc" class="jcarousel-container">
+               <div id="featured_wrapper_desc" class="jcarousel-clip">
+                  <ul id="featured_desc" class="jcarousel-list">                 
+                     <li>
+                        <div>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                           </p>
+                        </div>
+                     </li> 
+                     <li>
+                        <div>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                           </p>
+                        </div>
+                     </li> 
+                     <li>
+                        <div>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                           </p>
+                        </div>
+                     </li>  
+                     <li>
+                        <div>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                           </p>
+                        </div>
+                     </li> 
+                  </ul>
+               </div>-->
 
-<%= yield %>
+            </div>
+            <ul id="featured_buttons" class="clear_fix">
+               <li>1</li>
+               <li>2</li>
+               <li>3</li>
+               <li>4</li>
+            </ul>
+         </div>
+         <!-- end: sliding featured banner -->
+</div>
+          
+        
+        
+        </div><!---------------------------------end of middle banner-------------------------------->
+        
+        
+        <div class="center_content">
+        
+        <%= yield %>
+        
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+        	<div class="copyright">&copy; Los indestructibles</div>
+        </div>    
+    </div>
+</div>
 
 </body>
 </html>
