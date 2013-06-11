@@ -20,26 +20,5 @@
     }
   })
 </script>
-
-
-<div id="container">
-  <ul class="tabs">
-    <li><a href="#profile">Profile</a></li>
-  </ul>
-
-  <div class="tab_container">
-    <div id="profile" class="tab_content">
-
-      <!-- PROFILE DEL USUARIO -->
-      <% user = JSON.parse(@profile)[0] %>
-      <div class="subtitle">Profile</div>
-      <div class="label">Nombres:</div>
-      <div class="label-info"><%= user['first_name'] %> <%= user['middle_name'] %></div>
-      <div class="label">Apellidos:</div>
-      <div class="label-info"><%= user['last_name'] %></div>
-      <div style="clear: both"></div>
-      
-    </div>
-
-  </div>
-</div>
+<% user = JSON.parse(@profile)[0] %>
+<div class="label">Login :<%= user['first_name'] +" "+user['middle_name']+" "+user['last_name'] %></div>     
