@@ -1,4 +1,6 @@
 PC02Caballos::Application.routes.draw do
+  resources :horses
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
