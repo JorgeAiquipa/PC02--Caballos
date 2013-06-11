@@ -34,17 +34,22 @@
     </tr>
   <% i = 0 %>
   <% num = 6 %>
-  <% reg = Horse.last %>
+  <% @reg = Horse.last %>
   <% begin %>
-    <% r = Horse.find(rand(reg.id)) %>  
+    <% @r = Horse.find(rand(@reg.id)) %>  
       <tr>     
-        <td><%= r.id %></td>
-        <td><%= r.name %></td>
-        <td><%= r.ratio %></td>    
+        <td><%= @r.id %></td>
+        <td><%= @r.name %></td>
+        <td><%= @r.ratio %></td>    
       </tr>
     <% i += 1 %>
   <% end while i < num %>
   </table>
+
+   <div class="field">
+       <%= label_tag :Monto %> <br />
+       <%= text_field_tag :betamount %>
+   </div>
 
   <% end %>
 
@@ -53,35 +58,3 @@
   </div>
 
 <% end %>
-
-#  <div class="field">
-#       <%= label_tag :Caballo1 %> <br />
-#       <%= text_field_tag :horse1 %>
-#   </div>
-#   <div class="field">
-#       <%= label_tag :Caballo2 %> <br />
-#       <%= text_field_tag :horse2 %>
-#   </div>
-#   <div class="field">
-#       <%= label_tag :Caballo1 %> <br />
-#       <%= text_field_tag :horse3 %>
-#   </div>
-#   <div class="field">
-#       <%= label_tag :Caballo1 %> <br />
-#       <%= text_field_tag :horse4 %>
-#   </div>
-#   <div class="field">
-#       <%= label_tag :Caballo1 %> <br />
-#       <%= text_field_tag :horse5 %>
-#       <div class="field">
-#       <%= label_tag :Caballo1 %> <br />
-#       <%= text_field_tag :horse6 %>
-#   </div>
-#   </div>
-#   <div class="field">
-#       <%= label_tag :Monto %> <br />
-#       <%= text_field_tag :betamount %>
-#   </div>
-#   <div class="actions">
-#     <%= submit_tag "Crear" %>
-#   </div>
